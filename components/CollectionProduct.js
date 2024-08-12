@@ -19,7 +19,7 @@ export default function CollectionProduct({ product }) {
             </header>
             <div className="lg-col-span-2 lg:py-8">
               <div className="max-w-screen-2xl px-4 py-8 mx-auto sm:py-12 lg:px-8">
-                <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-stretch">
+                <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:items-stretch">
                   <div className="grid p-6 bg-gray-100 rounded place-content-center sm:p-8">
                     <div className="max-w-md mx-auto text-center lg:text-left">
                       <header>
@@ -42,7 +42,7 @@ export default function CollectionProduct({ product }) {
                     </div>
                   </div>
 
-                  <div className="lg-col-span-2 lg:py-8">
+                  <div className="lg-col-span-1 lg:py-4">
                     <ul className="grid grid-cols-2 gap-4">
                       <li>
                         <div className="block group">
@@ -56,6 +56,22 @@ export default function CollectionProduct({ product }) {
                         <div className="block group">
                           <img
                             src={product.images[1]}
+                            className="object-cover w-full rounded aspect-square"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div className="block group">
+                          <img
+                            src={product.images[2]}
+                            className="object-cover w-full rounded aspect-square"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div className="block group">
+                          <img
+                            src={product.images[3]}
                             className="object-cover w-full rounded aspect-square"
                           />
                         </div>

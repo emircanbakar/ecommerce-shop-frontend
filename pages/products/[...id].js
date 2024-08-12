@@ -1,6 +1,7 @@
 import { CartContext } from "@/lib/CartContext";
 import { mongooseConnect } from "@/lib/mongoose";
 import { Product } from "@/models/Product";
+import Link from "next/link";
 import { useContext } from "react";
 import toast from "react-hot-toast";
 
@@ -36,25 +37,21 @@ export default function ProductPage({ product }) {
           </div>
 
           <div className="p-4 lg:p-8 border">
-            <h1 className="text-3xl font-semibold text-gray-900">
-              {product.title}
-            </h1>
+            <h1 className="text-3xl font-md text-gray-900">{product.title}</h1>
             <div className="mt-6">
-              <h2 className="text-xl font-semibold text-gray-900">
-                Description
-              </h2>
+              <h2 className="text-xl font-md text-gray-900">Description</h2>
               <p className="mt-2 text-gray-700">{product.description}</p>
             </div>
 
             <div className="mt-6">
-              <h2 className="text-xl font-semibold text-gray-900">Details</h2>
+              <h2 className="text-xl font-md text-gray-900">Details</h2>
               <p className="mt-2 text-gray-700 list-disc list-inside">
                 {product?.details}
               </p>
             </div>
 
             <div className="mt-4 flex justify-between items-center">
-              <h2 className="text-xl font-semibold text-gray-900">Price</h2>
+              <h2 className="text-xl font-md text-gray-900">Price</h2>
               <p className="mt-2 text-primary font-semibold text-lg">
                 {formatPrice(product.price)} TL
               </p>
@@ -69,6 +66,12 @@ export default function ProductPage({ product }) {
               >
                 Add to Cart
               </button>
+              <Link
+                href="/products"
+                className="bg-accent text-white py-2 px-4 mt-4 rounded-md hover:bg-primary-dark w-full flex items-center justify-center text-center"
+              >
+                Return to Shopping
+              </Link>
             </div>
           </div>
         </div>

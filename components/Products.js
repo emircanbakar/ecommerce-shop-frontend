@@ -25,11 +25,11 @@ export default function Products({ products }) {
                     <div className="relative h-[300px] sm:h-[300px]">
                       <img
                         src={product.images[0]}
-                        className="absolute inset-0 object-contain h-full w-full opacity-100 group-hover:opacity-0"
+                        className="absolute inset-0 object-contain h-full w-full transition opacity-100 group-hover:opacity-0"
                       />
                       <img
                         src={product.images[1]}
-                        className="absolute inset-0 object-contain h-full w-full opacity-0 group-hover:opacity-100"
+                        className="absolute inset-0 object-contain h-full w-full transition opacity-0 group-hover:opacity-100"
                       />
                     </div>
 

@@ -33,13 +33,18 @@ export default function Products({ allProducts }) {
   return (
     <div className="flex justify-center min-h-screen w-full">
       <div className="mt-14 md:mt-6 w-full px-4 md:p-0">
-        <input
-          type="text"
-          placeholder="Search products"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="mb-4 px-4 py-2 rounded-lg border border-gray-300 w-full"
-        />
+        <div className="mb-12 flex justify-center items-center">
+          <div className="flex items-center">
+            <span className="mr-4 text-gray-600">Search products</span>
+            <input
+              type="text"
+              placeholder="Örn: 'Tablet'"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="h-auto w-auto px-4 py-2 rounded-lg border border-gray-300"
+            />
+          </div>
+        </div>
 
         {filteredProducts.length === 0 ? (
           <p className="text-center text-gray-600">
@@ -54,12 +59,12 @@ export default function Products({ allProducts }) {
                     <img
                       src={product.images[0]}
                       alt=""
-                      className="absolute inset-0 h-full w-full object-contain opacity-100 group-hover:opacity-0"
+                      className="absolute inset-0 h-full w-full object-contain opacity-100 transition p-1 group-hover:opacity-0"
                     />
                     <img
                       src={product.images[1]}
                       alt=""
-                      className="absolute inset-0 h-full w-full object-contain opacity-0 group-hover:opacity-100"
+                      className="absolute inset-0 h-full w-full object-contain opacity-0 transition p-1 group-hover:opacity-100"
                     />
                   </div>
 
@@ -81,7 +86,7 @@ export default function Products({ allProducts }) {
                             addProduct(product._id);
                             toast.success("Item added to cart!");
                           }}
-                          className="disabled block rounded bg-secondary px-5 py-3 text-md text-text w-full transition hover:bg-purple-300"
+                          className="disabled block text-white rounded bg-primary px-5 py-3 text-md w-full transition hover:bg-accent"
                         >
                           Add to cart
                         </button>
